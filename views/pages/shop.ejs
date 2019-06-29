@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Store</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="js/store.js" async></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="/doctor">Doctor's Schedule</a></li>
+                    <li><a href="" class="active">STORE</a></li>
+                    <li><a href="/login">LOGIN/ REGISTER</a></li>
+                    
+                    <div class="wrap">
+                        <div class="search">
+                           <input type="text" class="searchTerm" placeholder="Search for Medicines ...">
+                           <button type="submit" class="searchButton">
+                             <i class="fa fa-search"></i>
+                          </button>
+                        </div>
+                     </div>
+        
+
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Medicine Point</h1>
+
+            
+        </header>
+        <section class="container content-section">
+            <h1 class="section-header">Medicine Categories</h1>
+
+            <% for(var i=0; i < pList.length; i++){ %>
+
+            <h1 class="section-header"> <%= pList.pcategory %> </h1>
+
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title"> <%= pList[i].pname %> </span>
+                    <p><strong> <%= pList[i].availablity %> </strong></p>
+                    <img class="shop-item-image" src="Images/Paracetamol.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price"><strong> <%= pList[i].price %> </strong></span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <!-- <div class="shop-item">
+                    <span class="shop-item-title"> <%= pList[i].pname %> </span>
+                    <p><strong><%= pList[i].availablity %></strong></p>
+                    <img class="shop-item-image" src="Images/Paracetamol_Plus.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price"><strong><%= pList[i].price %></strong></span>
+                        <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                    </div>
+                </div> -->
+            <% } %>
+            </div>
+        </section>
+
+
+
+
+        <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">Tk. 0</span>
+            </div>
+            <a href="/login" class="purchase-anc">
+                <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+            </a> 
+        </section>
+        <footer class="main-footer">
+            <div class="container main-footer-container">
+                <h3 class="band-name">Medicine Point</h3>
+                <ul class="nav footer-nav">
+                    <li>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img src="Images/YouTube Logo.png">
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="Images/Facebook Logo.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
